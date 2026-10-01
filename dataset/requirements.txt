@@ -1,0 +1,9 @@
+torch
+torchaudio
+transformers>=4.51.0
+accelerate
+numpy
+soundfile
+sentencepiece
+protobuf
+regex
