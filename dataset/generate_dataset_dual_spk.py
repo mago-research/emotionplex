@@ -59,7 +59,7 @@ for _mod in (torch, sys.modules.get("transformers")):
 SAMPLE_RATE = 24_000
 GAP_SEC = 0.2
 
-TTS_REPO = "CHOOSEN_TTS_REPO"
+TTS_REPO = "multimodalart/higgs-audio-v3-tts-4b-transformers"
 LLM_REPO = "Qwen/Qwen2.5-3B-Instruct"
 
 EMOTIONS = ("happy", "sad", "angry", "neutral")

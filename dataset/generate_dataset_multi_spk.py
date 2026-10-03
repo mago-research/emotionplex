@@ -70,7 +70,7 @@ ROOMTONE_BANG_RATIO = 4.0
 DEFAULT_VOICE_DIR = Path(__file__).resolve().parent / "voice_prompts" / "libritts_r"
 DEFAULT_ROOMTONE = Path(__file__).resolve().parent / "assets" / "roomtone" / "classroom.wav"
 
-TTS_REPO = "CHOOSEN_TTS_REPO"
+TTS_REPO = "multimodalart/higgs-audio-v3-tts-4b-transformers"
 LLM_REPO = "Qwen/Qwen2.5-3B-Instruct"
 
 EMOTIONS = ("happy", "sad", "angry", "neutral")
