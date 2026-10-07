@@ -1,0 +1,65 @@
+# LoRA finetune nvidia/personaplex-7b-v1 on the multi-speaker 4x4 emotion set
+# from dataset/generate_dataset_multi_spk.py.
+# Paths are relative to the finetune/ directory.
+
+data:
+  train_data: ../dataset/outputs/train.jsonl
+  eval_data: ../dataset/outputs/val.jsonl
+  shuffle: true
+
+moshi_paths:
+  hf_repo_id: "nvidia/personaplex-7b-v1"
+
+# Uses text_prompt from each sample's sidecar JSON.
+system_prompt:
+  enable: true
+  audio_silence_frames: 6
+  prompt_budget_frames: 120
+
+puppeteer:
+  enable: false
+
+full_finetuning: false
+lora:
+  enable: true
+  rank: 512
+  scaling: 2.0
+  ft_embed: false
+  skip_depformer: false
+
+first_codebook_weight_multiplier: 4.0
+text_padding_weight: 0.04
+audio_loss_weight: 1.0
+lora_l2_weight: 1.0e-4
+
+# Duplex clips are one user turn, a short gap, then the agent reply.
+duration_sec: 40
+batch_size: 4
+max_steps: 8000
+gradient_checkpointing: true
+num_microbatches: 1
+
+optim:
+  lr: 2.0e-6
+  weight_decay: 0.1
+  pct_start: 0.05
+
+seed: 0
+log_freq: 10
+eval_freq: 100
+do_eval: true
+do_ckpt: true
+ckpt_freq: 100
+num_ckpt_keep: 3
+skip_zero_eval: true
+save_adapters: true
+
+run_dir: ./runs/emotion-v4
+overwrite_run_dir: false
+
+wandb:
+  project: emotionplex
+  run_name: emotion-v4
+
+gen_eval:
+  enable: false

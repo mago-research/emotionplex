@@ -1,0 +1,77 @@
+EmotionPlex
+
+This repository distributes independent source code. It does not include
+Boson model weights, Boson inference code, or a modified Boson architecture.
+The dataset scripts download those artifacts at runtime through Hugging Face
+Transformers (trust_remote_code).
+
+Source code in this repository
+------------------------------
+The source code in this repository is licensed under the Apache License,
+Version 2.0. See the LICENSE file. That license does not cover the Higgs
+artifacts downloaded at runtime.
+
+Downloaded Higgs artifacts
+--------------------------
+Running dataset/generate_dataset_dual_spk.py or
+dataset/generate_dataset_multi_spk.py downloads
+multimodalart/higgs-audio-v3-tts-4b-transformers. That repository packages
+the bosonai/higgs-audio-v3-tts-4b checkpoint (also published as
+bosonai/higgs-tts-3-4b) for Transformers. Those artifacts are Higgs Materials.
+They are not licensed under the Apache License, Version 2.0.
+
+A copy of each agreement is in this repository:
+
+  licenses/BOSON-HIGGS-AUDIO-V3-LICENSE.txt
+    Boson Higgs Audio v3 Research and Non-Commercial License
+    Last Updated: May 21, 2026
+    This is the agreement shipped with the Transformers port the scripts
+    download.
+
+  licenses/BOSON-HIGGS-TTS-3-LICENSE.txt
+    Boson Higgs TTS 3 Research and Non-Commercial License
+    Last Updated: July 8, 2026
+    This is the current agreement on the official Boson model repository.
+    Higgs TTS 3 is also referred to as Higgs Audio v3.
+
+The following attribution notices are retained verbatim. They are not
+summaries.
+
+Boson Higgs Audio v3 is licensed under the Boson Higgs Audio v3 Research and Non-Commercial License, Copyright (c) Boson AI USA, Inc. All Rights Reserved.
+
+Boson Higgs TTS 3 is licensed under the Boson Higgs TTS 3 Research and Non-Commercial License, Copyright (c) Boson AI USA, Inc. All Rights Reserved.
+
+Built with Higgs Materials licensed from Boson AI USA, Inc., Copyright Boson AI USA, Inc., All Rights Reserved.
+
+Boson does not publish a separate NOTICE file with the Higgs Materials.
+The sentences above are the attribution notices required by Section IV(a)
+of the agreements.
+
+Third-party components identified with the Higgs checkpoint
+-----------------------------------------------------------
+The Transformers port describes the backbone as Qwen3-4B, not Meta Llama.
+No Meta Llama attribution is included because these materials do not
+identify a Llama component.
+
+Qwen3-4B is licensed under the Apache License, Version 2.0, Copyright 2024 Alibaba Cloud.
+
+Other software used by this repository
+---------------------------------------
+These components are not Higgs Materials:
+
+Qwen2.5-3B-Instruct, used to write dialogue text, is licensed under the
+Apache License, Version 2.0.
+
+Training code is adapted from tin-computer/personaplex-finetune (MIT
+License) and Kyutai moshi-finetune (Apache License, Version 2.0), and
+loads LoRA from Kyutai moshi.
+
+PersonaPlex weights are not included in this repository. Training
+downloads them from nvidia/personaplex-7b-v1 under the NVIDIA model
+license that accompanies that repository.
+
+Acceptable use
+---------------
+Use of the Higgs Materials must follow the agreements above and the
+Boson AI Acceptable Use Policy at https://boson.ai/acceptable-use.
+See the License section of README.md.

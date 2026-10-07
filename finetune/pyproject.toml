@@ -1,0 +1,26 @@
+[project]
+name = "finetune"
+requires-python = ">=3.10"
+description = "LoRA finetune PersonaPlex on emotion duplex audio."
+dependencies = [
+  "fire",
+  "simple-parsing",
+  "pyyaml",
+  "safetensors",
+  "tensorboard",
+  "tqdm",
+  "torch",
+  "torchaudio",
+  "moshi @ git+https://github.com/kyutai-labs/moshi.git#subdirectory=moshi",
+  "sphn>=0.2.0,<0.3.0",
+  "huggingface_hub",
+  "wandb",
+  "sentencepiece",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["finetune*"]

@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated data and training runs
+outputs/
+runs/
+voice_prompts/
