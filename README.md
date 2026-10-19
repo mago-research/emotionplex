@@ -1,5 +1,8 @@
 # EmotionPlex
 
+<img width="3620" height="1272" alt="method_emotion-1" src="https://github.com/user-attachments/assets/2bb85ac0-2cc4-4dd8-9cba-296aee76d31f" />
+
+\
 4×4 emotion duplex speech for LoRA-finetuning [PersonaPlex](https://huggingface.co/nvidia/personaplex-7b-v1).
 
 Qwen writes a user line in one emotion and four agent replies (happy, sad, angry, neutral). Text-to-speech renders them. Each sample is 24 kHz stereo: **left = agent**, **right = user**, plus a JSON sidecar (`alignments`, `text_prompt`) and `train.jsonl` / `val.jsonl`.
