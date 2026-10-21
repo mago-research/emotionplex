@@ -7,9 +7,9 @@ Transformers (trust_remote_code).
 
 Source code in this repository
 ------------------------------
-The source code in this repository is licensed under the Apache License,
-Version 2.0. See the LICENSE file. That license does not cover the Higgs
-artifacts downloaded at runtime.
+Source code in this repository is licensed under the Apache License, Version
+2.0. See the LICENSE file. That license does not cover the Higgs artifacts
+downloaded at runtime.
 
 Downloaded Higgs artifacts
 --------------------------
@@ -65,6 +65,10 @@ Apache License, Version 2.0.
 Training code is adapted from tin-computer/personaplex-finetune (MIT
 License) and Kyutai moshi-finetune (Apache License, Version 2.0), and
 loads LoRA from Kyutai moshi.
+
+The AEQ Metric 3 inference backend is adapted from NVIDIA/personaplex
+offline inference code (MIT License). The upstream license text is retained
+at licenses/NVIDIA-PERSONAPLEX-LICENSE-MIT.txt.
 
 PersonaPlex weights are not included in this repository. Training
 downloads them from nvidia/personaplex-7b-v1 under the NVIDIA model

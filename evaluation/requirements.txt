@@ -1,0 +1,5 @@
+# AEQ Metric 3 evaluation dependencies
+funasr
+modelscope
+openai>=1.0
+python-dotenv

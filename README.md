@@ -46,9 +46,44 @@ torchrun --nproc-per-node 1 -m train configs/emotion_v4.yaml
 
 Training code is adapted from [tin-computer/personaplex-finetune](https://github.com/tin-computer/personaplex-finetune) (MIT) and [Kyutai moshi-finetune](https://github.com/kyutai-labs/moshi-finetune) (Apache-2.0), and loads LoRA from [moshi](https://github.com/kyutai-labs/moshi). PersonaPlex weights stay on Hugging Face under the NVIDIA model license.
 
+## Evaluation
+
+AEQ Metric 3 evaluation tools and the exact upstream Full-Duplex-Bench
+evaluation setup are documented in
+[`evaluation/README.md`](evaluation/README.md).
+
+## Inference
+
+Reproducible AEQ Metric 3 and Full-Duplex-Bench (FDB) runners share one
+PersonaPlex backend that loads the model once per run. Installation, data
+layouts, licenses, and individual commands are in
+[`inference/README.md`](inference/README.md).
+
+Obtain AEQ-Bench inputs from an AEQ-Bench release and download FDB v1.0/v1.5
+from the
+[official Full-Duplex-Bench repository](https://github.com/DanielLin94144/Full-Duplex-Bench).
+Neither dataset is redistributed here. End-to-end entry points are:
+
+```bash
+scripts/run_aeq_metric3.sh AEQ.json AEQ_WAV_DIR RESULTS_DIR cuda:0
+scripts/run_fdb.sh FDB_DATASET RESULTS_DIR FDB_CHECKOUT cuda:0 - v1_0 v1_5
+```
+
+The AEQ script skips its OpenAI text judge when `OPENAI_API_KEY` is absent.
+The FDB script still runs ASR and non-OpenAI metrics, but explicitly skips
+v1.0 `user_interruption` evaluation without the key. Model weights, datasets,
+voice prompts, API credentials, logs, and generated results remain excluded.
+
 ## License
 
-The source code in this repository is under the Apache License, Version 2.0 (`LICENSE`). Boson weights, Boson source, and any modified Boson architecture stay outside this tree and are fetched when a dataset script runs.
+The source code in this repository is under the Apache License, Version 2.0
+(`LICENSE`). Full-Duplex-Bench evaluation code is not redistributed; the
+version used for evaluation is linked and pinned in
+[`evaluation/README.md`](evaluation/README.md). Boson weights, Boson source,
+and any modified Boson architecture stay outside this tree and are fetched
+when a dataset script runs. The AEQ inference backend adapts MIT-licensed
+NVIDIA PersonaPlex code; its upstream license is retained in
+[`licenses/NVIDIA-PERSONAPLEX-LICENSE-MIT.txt`](licenses/NVIDIA-PERSONAPLEX-LICENSE-MIT.txt).
 
 Running either dataset script downloads [multimodalart/higgs-audio-v3-tts-4b-transformers](https://huggingface.co/multimodalart/higgs-audio-v3-tts-4b-transformers). That download is the Boson checkpoint packaged for Transformers, plus remote code. Those artifacts are Higgs Materials and stay under the Boson research and non-commercial license. Using them requires accepting that license on Hugging Face. Commercial use, including production, a hosted API, embedding the model in a product, or resale, needs a separate written license from Boson AI USA, Inc.
 

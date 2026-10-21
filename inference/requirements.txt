@@ -1,0 +1,7 @@
+# PersonaPlex inference dependencies.
+torch
+numpy
+sentencepiece
+huggingface_hub
+sphn>=0.2.0,<0.3.0
+moshi @ git+https://github.com/NVIDIA/personaplex.git@3428dfd95309a7f3c84fd93259ded0f810d1ff91#subdirectory=moshi

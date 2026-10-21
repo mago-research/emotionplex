@@ -221,3 +221,14 @@ __marimo__/
 outputs/
 runs/
 voice_prompts/
+
+# Evaluation credentials and generated artifacts
+evaluation/**/.env
+evaluation/**/results/
+evaluation/**/predictions.csv
+evaluation/**/*_summary.csv
+evaluation/**/*_summary.md
+
+# Optional local inference output location
+inference/aeq_metric3/results/
+inference/fdb/results/
